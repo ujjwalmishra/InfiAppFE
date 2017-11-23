@@ -16,6 +16,7 @@ import Drawer from '@containers/ui/DrawerContainer';
 // Scenes
 import AppLaunch from '@containers/Launch/LaunchContainer';
 import Placeholder from '@components/general/Placeholder';
+import WelcomeScene from './newuser';
 import AuthScenes from './auth';
 import TabsScenes from './tabs';
 
@@ -28,6 +29,9 @@ export default Actions.create(
       component={AppLaunch}
       analyticsDesc={'AppLaunch: Launching App'}
     />
+
+    {/* Welcome */}
+    {WelcomeScene}
 
     {/* Auth */}
     {AuthScenes}

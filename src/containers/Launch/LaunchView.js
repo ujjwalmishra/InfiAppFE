@@ -60,7 +60,7 @@ class AppLaunch extends Component {
         // Logged in, show index screen
         .then(() => Actions.app({ type: 'reset' }))
         // Not Logged in, show Login screen
-        .catch(() => Actions.authenticate({ type: 'reset' }));
+        .catch(() => Actions.welcome({ type: 'reset' }));
     }).catch(err => Alert.alert(err.message));
   }
 

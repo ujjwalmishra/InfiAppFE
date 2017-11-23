@@ -1,7 +1,5 @@
 /**
- * Authenticate Screen
- *  - Entry screen for all authentication
- *  - User can tap to login, forget password, signup...
+ * Welcome Screen
  *
  * React Native Starter App
  * https://github.com/mcnamee/react-native-starter-app
@@ -44,8 +42,8 @@ const styles = StyleSheet.create({
 });
 
 /* Component ==================================================================== */
-class Authenticate extends Component {
-  static componentName = 'Authenticate';
+class Welcome extends Component {
+  static componentName = 'Welcome';
 
   render = () => (
 
@@ -61,7 +59,8 @@ class Authenticate extends Component {
      </Text>
 
         <Text style={{fontSize: 18,textAlign: 'center',color:'#000', margin: 20, fontFamily:'Cochin'}}>
-         Obsolete
+         Infinity allows you to share your identity with trusted Infinity parterns. We believe personal identity is intimate,
+         which is why Infinity puts you, the user, in control of who you share your identity with.
       </Text>
 
 
@@ -79,7 +78,7 @@ class Authenticate extends Component {
           <Button
           color={'#000'}
           title='Create New Infinity ID'
-          onPress={Actions.app}
+          onPress={Actions.startID}
           raised={false}
           backgroundColor={'#d6d6d6'}
           />
@@ -93,4 +92,4 @@ class Authenticate extends Component {
 }
 
 /* Export Component ==================================================================== */
-export default Authenticate;
+export default Welcome;

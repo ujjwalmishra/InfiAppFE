@@ -1,7 +1,5 @@
 /**
- * Authenticate Screen
- *  - Entry screen for all authentication
- *  - User can tap to login, forget password, signup...
+ * Init ID Screen
  *
  * React Native Starter App
  * https://github.com/mcnamee/react-native-starter-app
@@ -44,8 +42,8 @@ const styles = StyleSheet.create({
 });
 
 /* Component ==================================================================== */
-class Authenticate extends Component {
-  static componentName = 'Authenticate';
+class CreateForm extends Component {
+  static componentName = 'CreateForm';
 
   render = () => (
 
@@ -61,20 +59,27 @@ class Authenticate extends Component {
      </Text>
 
         <Text style={{fontSize: 18,textAlign: 'center',color:'#000', margin: 20, fontFamily:'Cochin'}}>
-         Obsolete
+         Second page
       </Text>
 
 
 <Spacer size={50} />
 
       <View style={[AppStyles.row, AppStyles.paddingHorizontal,AppStyles.container,AppStyles.containerCentered]}>
-      <Image
-           source={require('../../images/shield.png')}
-           style={[styles.blue_arrow]}
-      />
-
+  
         <View style={[AppStyles.flex1]} />
           <Spacer size={35} />
+        <View style={[AppStyles.flex6]}>
+          <Button
+          color={'#000'}
+          title='Create New Infinity ID'
+          onPress={Actions.app}
+          raised={false}
+          backgroundColor={'#d6d6d6'}
+          />
+
+        </View>
+          <Spacer size={15} />
         <View style={[AppStyles.flex6]}>
           <Button
           color={'#000'}
@@ -93,4 +98,4 @@ class Authenticate extends Component {
 }
 
 /* Export Component ==================================================================== */
-export default Authenticate;
+export default CreateForm;

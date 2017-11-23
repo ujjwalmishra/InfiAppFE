@@ -23,7 +23,7 @@ export default {
 
   // Navbar Props
   navbarProps: {
-    hideNavBar: true,
+    hideNavBar: false,
     titleStyle: AppStyles.navbarTitle,
     navigationBarStyle: AppStyles.navbar,
     leftButtonIconStyle: AppStyles.navbarButton,
