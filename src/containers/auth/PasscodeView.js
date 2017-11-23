@@ -15,6 +15,8 @@ import { Actions } from 'react-native-router-flux';
 // Consts and Libs
 import { AppStyles, AppSizes, AppColors } from '@theme/';
 
+import Pin from '@containers/ui/Pin';
+
 // Components
 import { Spacer, Text,Button} from '@ui/';
 
@@ -42,54 +44,25 @@ const styles = StyleSheet.create({
 });
 
 /* Component ==================================================================== */
-class CreateForm extends Component {
-  static componentName = 'CreateForm';
+class Passcode extends Component {
+  static componentName = 'Passcode';
 
   render = () => (
 
     <View style={[AppStyles.containerCentered, AppStyles.container, styles.background]}>
 
-      <Image
-        source={require('../../images/logo.png')}
-        style={[styles.logo]}
-      />
-
-      <Text style={{fontSize: 20,textAlign: 'center',color:'#000', margin: 20,fontWeight: 'bold'}}>
-        Secure identity management built on blockchain
+    <Text style={{fontSize: 20,textAlign: 'center',color:'#000', margin: 20,fontWeight: 'bold'}}>
+        Enter 4 digit Passcode
      </Text>
 
-        <Text style={{fontSize: 18,textAlign: 'center',color:'#000', margin: 20, fontFamily:'Cochin'}}>
-         Second page
-      </Text>
+      
 
-<Spacer size={50} />
+    <Spacer size={20} />
 
       <View style={[AppStyles.row, AppStyles.paddingHorizontal,AppStyles.container,AppStyles.containerCentered]}>
-  
-        <View style={[AppStyles.flex1]} />
-          <Spacer size={35} />
-        <View style={[AppStyles.flex6]}>
-          <Button
-          color={'#000'}
-          title='Enable Touch ID'
-          onPress={Actions.app}
-          raised={false}
-          backgroundColor={'#d6d6d6'}
-          />
-
-        </View>
-          <Spacer size={15} />
-        <View style={[AppStyles.flex6]}>
-          <Button
-          color={'#000'}
-          title='Create New Passcode'
-          onPress={Actions.passcode}
-          raised={false}
-          backgroundColor={'#d6d6d6'}
-          />
-
-        </View>
-        <View style={[AppStyles.flex1]} />
+    
+        <Pin />
+     
       </View>
 
     </View>
@@ -97,4 +70,4 @@ class CreateForm extends Component {
 }
 
 /* Export Component ==================================================================== */
-export default CreateForm;
+export default Passcode;

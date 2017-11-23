@@ -26,6 +26,7 @@ const scenes = (
     />
     <Scene
       {...AppConfig.navbarProps}
+      hideNavBar
       key={'startID'}
       title={'Create'}
       component={CreateForm}
