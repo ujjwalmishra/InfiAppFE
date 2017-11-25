@@ -1,7 +1,12 @@
 
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
-import ImageButton from 'react-native-img-button';
+import {
+    StyleSheet, 
+    Text, 
+    View, 
+    Image
+} from 'react-native';
+
 
 const styles = StyleSheet.create({
     row: {
