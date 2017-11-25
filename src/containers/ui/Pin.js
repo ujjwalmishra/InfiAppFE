@@ -15,23 +15,17 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    image: {
-        height: 60,
-        borderRadius: 30,
-        width: 60,
-        margin:20
-    },
     pad: {
         flex: 1,
         margin: 20,
     },
     btn: {
         fontFamily: 'Droid Sans Mono',
-        fontSize: 50,
+        fontSize: 24,
         justifyContent: 'center',
         alignItems: 'center',
         paddingVertical: 10,
-        paddingHorizontal: 35,
+        paddingHorizontal: 0,
         textAlign: 'center',
         margin: 10,
     },
@@ -43,13 +37,20 @@ const styles = StyleSheet.create({
         fontFamily: 'Droid Sans Mono',
         fontSize: 40,
         fontWeight: '500',
-    },  
-    container: {
-        flex: 1,
     },
-    btnC: {
-        width: 50,
-        height: 50,
+    numberCircle : {
+        borderRadius: 30,
+
+        width: 60,
+        height: 60,
+        padding: 10,
+        margin: 20,
+
+        backgroundColor: '#fff',
+        borderWidth: 2,
+        textAlign: 'center',
+
+        fontSize: 22
     }
 
 });
@@ -73,6 +74,7 @@ export default class Pin extends Component {
     }
 
     handlePress(num) {
+        console.log("pressed " + num);
         let {value} = this.state;
         value += String(num);
 
@@ -101,7 +103,8 @@ export default class Pin extends Component {
         //           onPress={()=> this.handlePress(num)}/>
         //       </View>
         // );
-        return (<Image style={styles.image} source={{uri: 'http://placehold.it/60x60'}}/> );
+        //return (<Image style={styles.image} source={{uri: 'http://placehold.it/60x60'}}/> );
+        return (<View  onPress={()=> this.handlePress(num)}><Text onPress={()=> this.handlePress(num)} style={styles.numberCircle} >{num}</Text></View>);
         
     };
 
@@ -135,9 +138,9 @@ export default class Pin extends Component {
             </View>
 
             <View style={styles.row} >
-                <Text onPress={()=> this.handleClear()} style={styles.btn}>C</Text>
+                <Text onPress={()=> this.handleClear()} style={styles.btn}>{' .... ..  '}</Text>
                 {this.renderButton(0)}
-                <Text onPress={()=> this.handleRemove()} style={styles.btn}>{'<'}</Text>
+                <Text onPress={()=> this.handleRemove()} style={styles.btn}>{'Delete'}</Text>
             </View>
         </View>);
     }
