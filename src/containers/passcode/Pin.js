@@ -74,15 +74,18 @@ export default class Pin extends Component {
     }
 
     handlePress(num) {
-        console.log("pressed " + num);
+
         let {value} = this.state;
+
+        if(value.length == MAX_LENGTH) return;
+
         value += String(num);
 
         this.setState({value});
 
         if (value.length == MAX_LENGTH) {
-            this.props.onSubmit(value);
-            this.props.onDone();
+            this.props.onEnter(value);
+           // this.props.onDone();
         }
     }
 
@@ -92,21 +95,14 @@ export default class Pin extends Component {
     }
 
     renderButton(num) {        
-        // return (
-        //     <View style={ styles.container }>
-        //         <ImageButton
-        //           style={ styles.btnC }
-        //           appearance={ {
-        //             normal: source={{uri: 'http://placehold.it/100x100'}},
-        //             highlight: source={{uri: 'http://placehold.it/100x100'}}
-        //           } }
-        //           onPress={()=> this.handlePress(num)}/>
-        //       </View>
-        // );
-        //return (<Image style={styles.image} source={{uri: 'http://placehold.it/60x60'}}/> );
-        return (<View  onPress={()=> this.handlePress(num)}><Text onPress={()=> this.handlePress(num)} style={styles.numberCircle} >{num}</Text></View>);
+
+        return (<View ><Text onPress={()=> this.handlePress(num)} style={styles.numberCircle} >{num}</Text></View>);
         
     };
+
+    componentDidMount = () => {
+        this.handleClear();
+    }
 
     render() {
         const {value} = this.state;

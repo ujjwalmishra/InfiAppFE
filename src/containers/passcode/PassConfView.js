@@ -15,7 +15,7 @@ import { Actions } from 'react-native-router-flux';
 // Consts and Libs
 import { AppStyles, AppSizes, AppColors } from '@theme/';
 
-import Pin from '@containers/ui/Pin';
+import Pin from '@containers/passcode/Pin';
 
 // Components
 import { Spacer, Text,Button} from '@ui/';
@@ -44,15 +44,26 @@ const styles = StyleSheet.create({
 });
 
 /* Component ==================================================================== */
-class Passcode extends Component {
+class PassConf extends Component {
   static componentName = 'Passcode';
+
+  onSubmit = (value) => {
+
+    if(value == this.props.confPasscode) {
+      Actions.app();
+    }
+    else{
+      Actions.passcode();
+    }
+    
+  }
 
   render = () => (
 
     <View style={[AppStyles.containerCentered, AppStyles.container, styles.background]}>
 
     <Text style={{fontSize: 20,textAlign: 'center',color:'#000', margin: 20,fontWeight: 'bold'}}>
-        Enter 4 digit Passcode
+        Confirm 4 digit Passcode
      </Text>
 
       
@@ -61,7 +72,7 @@ class Passcode extends Component {
 
       <View style={[AppStyles.row, AppStyles.paddingHorizontal,AppStyles.container,AppStyles.containerCentered]}>
     
-        <Pin />
+        <Pin onEnter={(value)=> this.onSubmit(value)}/>
      
       </View>
 
@@ -70,4 +81,4 @@ class Passcode extends Component {
 }
 
 /* Export Component ==================================================================== */
-export default Passcode;
+export default PassConf;

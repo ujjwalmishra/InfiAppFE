@@ -58,6 +58,16 @@ function getUserData(dispatch) {
   });
 }
 
+export function setPasscode(passcode) {
+      // Send to Redux
+      return dispatch => {
+        dispatch({
+          type: 'USER_PASSCODE',
+          data: passcode
+        })
+      };
+}
+
 /**
   * Login to Firebase with Email/Password
   */

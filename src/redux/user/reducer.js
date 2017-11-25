@@ -22,6 +22,16 @@ export default function userReducer(state = initialState, action) {
       }
       return {};
     }
+    case 'USER_PASSCODE': {
+      if (action.data) {
+        const passcode = action.data;
+        return {
+          ...state,
+          passcode: passcode,
+        };
+      }
+      return {};      
+    }
     case 'USER_DETAILS_UPDATE': {
       if (action.data) {
         const input = action.data;

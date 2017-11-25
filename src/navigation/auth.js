@@ -12,7 +12,8 @@ import { AppConfig } from '@constants/';
 
 // Scenes
 import Authenticate from '@containers/auth/AuthenticateView';
-import Passcode from '@containers/auth/PasscodeView';
+import Passcode from '@containers/passcode/PasscodeContainer';
+import PasscodeConf from '@containers/passcode/PassConfContainer';
 import LoginForm from '@containers/auth/Forms/LoginContainer';
 import SignUpForm from '@containers/auth/Forms/SignUpContainer';
 import ResetPasswordForm from '@containers/auth/Forms/ResetPasswordContainer';
@@ -52,6 +53,14 @@ const scenes = (
       component={Passcode}
       analyticsDesc={'Create Passcode'}
     />
+    <Scene
+      {...AppConfig.navbarProps}
+      key={'passConf'}
+      title={'Confirm Passocde'}
+      clone
+      component={PasscodeConf}
+      analyticsDesc={'Confirm Passcode'}
+    />    
     <Scene
       {...AppConfig.navbarProps}
       key={'passwordReset'}
